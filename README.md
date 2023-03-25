@@ -14,7 +14,7 @@ Used it technique described at https://git-scm.com/book/en/v2/Git-Tools-Submodul
 
 Added submodule from https://github.com/ParticulaCode/GoDiceJavaScriptAPI
 
-
+Tested with 
 
 
 
