@@ -6,8 +6,17 @@ I used this as a project to be my introduction to programming for the web in 201
 
 This is built using vanilla JavaScript, JQuery, the HTML5 Canvas, as well as some CSS3 animations/transitions.
 
-Forked from https://github.com/dantothelz/craps to port over from my brother's account to my GitHub account.
-For commit history prior to the merge of the Master and Mobile branches, please see that repository.
+forked from https://github.com/mduleone/craps
+
+# GoDice
+
+Used it technique described at https://git-scm.com/book/en/v2/Git-Tools-Submodules 
+
+Added submodule from https://github.com/ParticulaCode/GoDiceJavaScriptAPI
+
+
+
+
 
 # License
 MIT
