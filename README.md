@@ -10,6 +10,18 @@ forked from https://github.com/mduleone/craps
 
 # GoDice
 
+Use the menu tab titled "GoDice" 
+
+Click 'Connect GoDice' to connect
+
+connect one or two GoDice
+
+Rolling the Dice sets two values and triggers the craps game to take the values if "using go dice" is checked
+
+Issues - 
+
+- works best if you're watching the panel so you can see if one of the dice got a bad roll
+
 Used git technique described at https://git-scm.com/book/en/v2/Git-Tools-Submodules 
 
 Added submodule from https://github.com/ParticulaCode/GoDiceJavaScriptAPI
