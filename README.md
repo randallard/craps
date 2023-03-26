@@ -47,7 +47,7 @@ const diceIndicatorEl = document.getElementById(diceId + "-die-status");
 diceIndicatorEl.textContent = "Fake Stable: " + value;
 +       setCraps( value );^M
 
-
+also add setCraps(value); to onMoveStable
 
 
 # License
