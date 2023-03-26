@@ -647,6 +647,7 @@ var GameState = {
   },
   numFire: 0,
   tutorial: false,
+  UsingGoDice: false,
   tutorialState: 0
 };
 
@@ -719,11 +720,20 @@ $.extend(_CRAPS, {
   dice: null,
   roll: function(){
     // Roll the dice.
-    //_CRAPS.output("Before Roll - The point is: " + GameState.point);
+    // _CRAPS.output("Before Roll - The point is: " + GameState.point);
     var $CRAPS = this;
     _CRAPS.dice.dice.roll(function(roll){
       colors['dicePips'] = eval("colors" + $('#colorScheme').val() + "['dicePips']");
       _CRAPS.dice.dice.total = roll;
+      if(GameState.UsingGoDice){
+        var die0 = _CRAPS.dice.dice.dice[0];
+        var die1 = _CRAPS.dice.dice.dice[1];
+        var theseDice = _CRAPS.dice.dice
+        die0.value = parseInt($('#GoDie1').val(),10);
+        die1.value = parseInt($('#GoDie2').val(),10);
+        roll = die0.value + die1.value;
+        theseDice.total = roll;
+      }
       if(GameState.tutorial){
         var die0 = _CRAPS.dice.dice.dice[0];
         var die1 = _CRAPS.dice.dice.dice[1];

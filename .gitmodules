@@ -1,0 +1,3 @@
+[submodule "GoDiceJavaScriptAPI"]
+	path = GoDiceJavaScriptAPI
+	url = https://github.com/ParticulaCode/GoDiceJavaScriptAPI.git

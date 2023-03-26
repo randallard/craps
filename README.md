@@ -14,6 +14,26 @@ Used it technique described at https://git-scm.com/book/en/v2/Git-Tools-Submodul
 
 Added submodule from https://github.com/ParticulaCode/GoDiceJavaScriptAPI
 
+I shouldn't have used submodules - will try to figure out later but here are the changes I made to main.js
+
+GoDice.prototype.onDiceConnected = (diceId, diceInstance) => {
++    $('#checkboxUsingGoDice').prop('checked',true);^M
++    GameState.UsingGoDice = true;^M
+     console.log("Dice connected: ", diceId);
+
+@@ -175,6 +177,8 @@ GoDice.prototype.onStable = (diceId, value, xyzArray) => {
+// Get roll value indicator and show stable value
+const diceIndicatorEl = document.getElementById(diceId + "-die-status");
+diceIndicatorEl.textContent = "Stable: " + value;
++       console.log("Die1: [" + $('#GoDie1').val() + "]; Die2: [" + $('#GoDie2').val() + "];")^M
++       setCraps( value );^M
+
+GoDice.prototype.onTiltStable = (diceId, xyzArray, value) => {
+@@ -191,6 +195,7 @@ GoDice.prototype.onFakeStable = (diceId, value, xyzArray) => {
+// Get tile indicator and show fake value
+const diceIndicatorEl = document.getElementById(diceId + "-die-status");
+diceIndicatorEl.textContent = "Fake Stable: " + value;
++       setCraps( value );^M
 
 
 

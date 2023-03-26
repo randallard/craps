@@ -118,7 +118,7 @@ function closeGlossary(){
 }
 
 function clickModalButton(button){
-  var modals = ['gameplay', 'rules', 'settings', 'tutorial', 'about'];
+  var modals = ['gameplay', 'rules', 'settings', 'tutorial', 'about', 'godice'];
   var _drawer = $('#drawer');
   if(_drawer.css('visibility')== 'hidden' || _drawer.css('display') == 'none'){
     openModal();
@@ -171,7 +171,8 @@ function resizeDrawer(){
             $('#rulesButton').width() + 
             $('#settingsButton').width() + 
             $('#tutorialButton').width() + 
-            $('#aboutButton').width() + 
+            $('#aboutButton').width() +
+            $('#godiceButton').width() +
             115);/*
   $('#drawerWindow').height(_drawer.height() - _drawer.height()*(0.005) - $('#board').height()*(0.02) - 35);
   var rules = $('#rules');

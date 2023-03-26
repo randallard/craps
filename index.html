@@ -15,7 +15,7 @@
     <meta name="appsfuel_code" content="ce06541daa02a75"/ -->
     <!--meta name="viewport" content="user-scalable=0, width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" / -->
     <!-- meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0" / -->
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script type='text/javascript' language='javascript'>
@@ -53,6 +53,22 @@
         viewport.setAttribute('content',"user-scalable=0, width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi");
       }
       document.getElementsByTagName('head')[0].appendChild(viewport);
+
+      function setCraps ( value ) {
+          if ( $('#GoDie1').val() === "" ){
+            console.log("setting GoDie1 value");
+            $('#GoDie1').val( value );
+          }
+          else if ( $('#GoDie2').val() === "" ){
+            console.log("setting GoDie1 value");
+            $('#GoDie2').val( value );
+            roll();
+          }
+          else {
+              $('#GoDie1').val( value );
+              $('#GoDie2').val( '' );
+          }
+      }
     </script>
     <link href="css/layout.css" media="all" rel="stylesheet" type="text/css" />
     <link href="css/css3-gmail-style.css" media="all" rel="stylesheet" type="text/css" />
@@ -127,6 +143,7 @@
         <div id='settingsButton' class='tab' onclick='clickModalButton("settings")'>Settings</div>
         <div id='tutorialButton' class='tab' onclick='clickModalButton("tutorial")'>Tutorial</div>
         <div id='aboutButton' class='tab' onclick='clickModalButton("about")'>About</div>
+        <div id='godiceButton' class='tab' onclick='clickModalButton("godice")'>GoDice</div>
       </div>
       <div id='drawerWindow' class='modalWindow'>
         <div id='about' class='drawerWindow off'>
@@ -345,6 +362,18 @@
             </tr>
           </table>
         </div>
+        <div id='godice' class='drawerWindow'>
+          <p><input type="checkbox" id="checkboxUsingGoDice" onclick="GameState.UsingGoDice = this.checked;" />Using Go Dice</p>
+          <p>
+            Die 1: <input type="text" id="GoDie1" value="" readonly /><br />
+            Die 2: <input type="text" id="GoDie2" value="" readonly />
+          </p>
+          <h3 id="craps-message"></h3>
+          <p><a href="GoDiceJavaScriptAPI/index.html" target="_blank">Open GoDice Testing Page</a></p>
+          <button onclick="openConnectionDialog()" type="button" class="btn btn-outline-primary">Connect GoDice</button>
+          <h3 id="gocube-message"></h3>
+          <div id="dice-host"></div>
+        </div>
       </div>
       <div id='closeDrawer' class='bttn red' onclick='closeModal()'>Close</div>
     </div>
@@ -387,6 +416,8 @@
     <script type='text/javascript' language='javascript' src='js/board.js'></script>
     <script type='text/javascript' language='javascript' src='js/modal.js'></script>
     <script type='text/javascript' language='javascript' src='js/betForm.js'></script>
+    <script type='text/javascript' language='javascript' src="GoDiceJavaScriptAPI/godice.js"></script>
+    <script type='text/javascript' language='javascript' src="GoDiceJavaScriptAPI/main.js"></script>
 
     <script type='text/javascript' language='javascript'>
       
