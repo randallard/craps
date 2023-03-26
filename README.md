@@ -10,7 +10,7 @@ forked from https://github.com/mduleone/craps
 
 # GoDice
 
-Used it technique described at https://git-scm.com/book/en/v2/Git-Tools-Submodules 
+Used git technique described at https://git-scm.com/book/en/v2/Git-Tools-Submodules 
 
 Added submodule from https://github.com/ParticulaCode/GoDiceJavaScriptAPI
 
